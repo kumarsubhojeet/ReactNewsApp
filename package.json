@@ -1,13 +1,14 @@
 {
   "name": "server",
+  "homepage": "http://kumarsubhojeet.github.io/ReactNews",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "build": "webpack",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix napp && npm run build --prefix napp"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Subhojit",
   "license": "ISC",
@@ -22,5 +23,8 @@
   },
   "engines": {
     "node": "14.x"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

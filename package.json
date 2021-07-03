@@ -1,14 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "engines": {
-    "node": "14.x"
-  },
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
+    "build": "webpack",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix napp && npm run build --prefix napp"
   },
   "author": "Subhojit",
@@ -21,5 +19,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.0",
     "nodemon": "^2.0.9"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }

@@ -8,9 +8,6 @@ const authenticate = require("../Middleware/authenticate");
 require("../DB/Connection");
 const User = require("../Schema/UserSchema");
 
-router.get('/', (req, res) => {
-    res.send(`Hello world from the server rotuer js`);
-});
 
 
 

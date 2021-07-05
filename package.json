@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "napp": "npm start --prefix napp",
+    "clientinstall": "npm install --prefix napp",
+    "dev": "concurrently \"npm run index\" \"npm run napp\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix napp && npm run build --prefix napp"
   },
   "author": "Subhojit",
   "license": "ISC",

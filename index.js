@@ -17,10 +17,7 @@ app.use(require("./Route/auth"))
 
 //Middleware
 
-const PORT = process.env.PORT;
-if (port == null || port == "") {
-  port = 5000;
-}
+const PORT = Process.env.PORT || 5000 
 
 
 

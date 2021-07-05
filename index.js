@@ -2,6 +2,7 @@ const express = require ('express')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
+const process = require('process');
 
 const app = express()
 app.use(cookieParser());
@@ -18,8 +19,8 @@ app.use(require("./Route/auth"))
 //Middleware
 
 const PORT = process.env.PORT;
-if (port == null || port == "") {
-  port = 5000;
+if (PORT == null || PORT == "") {
+  PORT = 5000;
 }
 
 if ( process.env.NODE_ENV == "production"){

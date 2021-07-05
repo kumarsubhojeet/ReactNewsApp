@@ -17,8 +17,23 @@ app.use(require("./Route/auth"))
 
 //Middleware
 
-const PORT = Process.env.PORT || 5000 
+const PORT = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
 
+if ( process.env.NODE_ENV == "production"){
 
+    app.use(express.static("napp/build"));
+
+    const path = require("path");
+
+    app.get("*", (req, res) => {
+
+        res.sendFile(path.resolve(__dirname, 'napp', 'build', 'index.html'));
+
+    })
+
+}
 
 app.listen(PORT , console.log(`Server started at ${PORT}`))

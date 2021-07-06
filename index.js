@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser');
 const process = require('process');
+const path = require("path");
 
 const app = express()
 app.use(cookieParser());
@@ -23,8 +24,6 @@ const port = process.env.PORT || 5000;
 if ( process.env.NODE_ENV == "production"){
 
     app.use(express.static("client/build"));
-
-    const path = require("path");
 
     app.get("*", (req, res) => {
 
